@@ -3,7 +3,7 @@
 <div *ngFor="let product of products" style="display: inline-block;
 height: 240px; width: 160px">
   <h3>
-    <img src="https://raw.githack.com/jokerm/CarDemoAg6/master/src/img/{{product.id}}).jpg" width="120">     
+    <img src="https://raw.githack.com/jokerm/CarDemoAg6/master/src/img/{{product.id}}.jpg" width="120">     
     <a [title]="product.nombre + ' details'" 
        [routerLink]="['/products', product.id]">
       {{ product.nombre }}
