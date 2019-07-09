@@ -1,0 +1,29 @@
+<h2>Product Details</h2>
+
+<div *ngIf="product">
+  <h3>{{ product.nombre }}</h3>
+  <h4>{{ product.precio | currency }}</h4>
+  <p>{{ product.descripcion }}</p>
+  <!-- <button (click)="addToCart(product)">Buy</button> -->
+
+  <div>
+    <label>Talla</label>
+    <input type="number" min="{{product.tallaMin}}" max="{{product.tallaMax}}" name="talla" [(ngModel)]="product.talla">
+  </div>
+  <div>
+    <label>Color</label>
+<select name="someName" [(ngModel)]="product.color">
+   <option *ngFor="let color of product.colores" [value]="color">{{ color }}</option>
+</select>       
+  </div>
+  <div>
+    <label>Cantidad</label>
+    <input type="number" min="1" [(ngModel)]="product.cantidad">
+  </div>
+  <div>
+    <label>Comprador</label>
+    <input type="text" [(ngModel)]="product.comprador">
+  </div>    
+
+  <button class="button" (click)="addToCart(product)">Agregar</button> 
+</div>

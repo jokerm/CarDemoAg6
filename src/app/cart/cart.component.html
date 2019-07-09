@@ -1,0 +1,48 @@
+<h3>Ordenes</h3>
+
+<table id="miTable">
+  <tr>
+    <th>Modelo</th>
+    <th>Color</th>
+    <th>Talla</th>
+    <th>Cantidad</th>
+    <th>Comprador</th>
+    <th>Total a pagar</th>
+    <th><button (click)="Exportar('miPedido.csv')">Exportar</button></th>
+  </tr>
+  <tr *ngFor="let item of items; let idx = index">
+    <td><span>{{ item.nombre }}</span></td>
+    <td><span>{{ item.color }}</span></td>
+    <td><span>{{ item.talla }}</span></td>
+    <td><span>{{ item.cantidad }}</span></td>
+    <td><span>{{ item.comprador }}</span></td>
+    <td><span>{{ item.cantidad * item.precio | currency }}</span></td>
+    <td><button (click)="Borrar(idx)">Remove</button></td>
+  </tr>  
+</table>
+
+<!-- <div class="cart-item" *ngFor="let item of items">
+  <span>{{ item.nombre }}</span>
+  <span>{{ item.color }}</span>
+  <span>{{ item.talla }}</span>  
+  <span>{{ item.cantidad }}</span>  
+  <span>{{ item.comprador }}</span>
+  <span>{{ item.cantidad * item.precio | currency }}</span>
+</div> -->
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
